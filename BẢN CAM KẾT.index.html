@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phiếu Cam Kết Tết Nguyên Đán 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #f0f9ff 0%, #fff7ed 100%);
+            min-height: 100vh;
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .border-ornament {
+            border: 12px double #1e40af;
+            padding: 5px;
+            background-color: white;
+            box-shadow: 0 20px 50px rgba(30, 64, 175, 0.15);
+            max-width: 850px;
+            width: 100%;
+            position: relative;
+            border-radius: 24px;
+        }
+
+        .inner-border {
+            border: 2px solid #92400e;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 18px;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .header-left { width: 45%; }
+        .header-right { width: 50%; }
+
+        .school-name {
+            font-weight: bold;
+            text-decoration: underline;
+            color: #1e40af;
+            font-size: 1.1rem;
+        }
+
+        .title-main {
+            color: #b91c1c;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            line-height: 1.4;
+        }
+
+        /* Premium Safety Banner */
+        .safety-hero {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 20px;
+            margin-bottom: 25px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .safety-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 4px;
+            background: linear-gradient(90deg, #ef4444, #f97316, #3b82f6, #06b6d4);
+        }
+
+        .safety-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .safety-card:hover { transform: translateY(-5px); }
+
+        .icon-wrapper {
+            width: 60px;
+            height: 60px;
+            background: #f8fafc;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border: 1px solid #f1f5f9;
+        }
+
+        .card-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #334155;
+            line-height: 1.2;
+        }
+
+        .info-box {
+            background-color: #f0f9ff;
+            border-left: 6px solid #0ea5e9;
+            padding: 18px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .commitment-box {
+            background-color: #fffbeb;
+            border: 1px solid #fde68a;
+            padding: 20px;
+            border-radius: 18px;
+            margin-bottom: 20px;
+        }
+
+        .signature-pad {
+            border: 1px dashed #cbd5e1;
+            background: #fff;
+            height: 100px;
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        input[type="text"] {
+            background: transparent;
+            border-bottom: 1px solid #94a3b8;
+            outline: none;
+            padding: 0 5px;
+        }
+
+        .check-container {
+            display: flex;
+            align-items: flex-start;
+            cursor: pointer;
+            margin-bottom: 12px;
+            padding: 8px;
+            border-radius: 10px;
+            transition: background 0.2s;
+        }
+
+        .check-container:hover { background: rgba(255,255,255,0.5); }
+
+        .custom-checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #1e40af;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-right: 12px;
+            margin-top: 2px;
+        }
+
+        input[type="checkbox"]:checked + .custom-checkbox { background-color: #1e40af; }
+        input[type="checkbox"]:checked + .custom-checkbox::after { content: '✓'; color: white; font-size: 12px; }
+
+        .hidden-checkbox { display: none; }
+
+        @media print {
+            .no-print { display: none; }
+            body { background: white; padding: 0; }
+            .border-ornament { box-shadow: none; border: 6px double black; }
+            .inner-border { border: 1px solid black; }
+            .safety-hero { border: 1px solid #eee; }
+        }
+
+        #successModal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(4px);
+            z-index: 100;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="border-ornament">
+        <div class="inner-border">
+            <!-- Header -->
+            <div class="header-top">
+                <div class="header-left">
+                    <div class="text-[0.8rem] uppercase">UBND XÃ LIÊN HƯƠNG</div>
+                    <div class="school-name uppercase">TRƯỜNG TIỂU HỌC LẠC TRỊ</div>
+                </div>
+                <div class="header-right">
+                    <div class="font-bold text-[0.85rem]">CỘNG HOÀ XÃ HỘI CHỦ NGHĨA VIỆT NAM</div>
+                    <div class="text-[0.85rem] font-bold">Độc lập - Tự do - Hạnh phúc</div>
+                    <div class="w-24 h-px bg-black mx-auto mt-1"></div>
+                </div>
+            </div>
+
+            <!-- Date -->
+            <div class="text-right italic text-sm mb-4">
+                Liên Hương, ngày 24 tháng 12 năm 2025
+            </div>
+
+            <!-- Main Title -->
+            <div class="text-center mb-6 px-4">
+                <h1 class="text-xl md:text-2xl font-bold mb-3">BẢN CAM KẾT</h1>
+                <h2 class="title-main text-base md:text-lg">
+                    Không sử dụng chất cháy nổ, chấp hành đúng luật giao thông trước, trong, sau Tết Nguyên đán Bính Ngọ và các ngày lễ lớn năm 2026
+                </h2>
+            </div>
+
+            <!-- Enhanced Visual Banner -->
+            <div class="safety-hero no-print">
+                <div class="safety-card">
+                    <div class="icon-wrapper">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="#ef4444" stroke-width="2"/>
+                            <path d="M7 7L17 17M7 17L17 7" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <span class="card-label">TRÁNH XA<br>MA TÚY</span>
+                </div>
+                <div class="safety-card">
+                    <div class="icon-wrapper">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="#f97316" stroke-width="2"/>
+                            <path d="M18 12H10M18 14H10" stroke="#f97316" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="5" y1="5" x2="19" y2="19" stroke="#f97316" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <span class="card-label">KHÔNG<br>THUỐC LÁ</span>
+                </div>
+                <div class="safety-card">
+                    <div class="icon-wrapper">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="7" y="2" width="10" height="20" rx="5" stroke="#3b82f6" stroke-width="2"/>
+                            <circle cx="12" cy="7" r="2" fill="#ef4444"/>
+                            <circle cx="12" cy="12" r="2" fill="#eab308"/>
+                            <circle cx="12" cy="17" r="2" fill="#22c55e"/>
+                        </svg>
+                    </div>
+                    <span class="card-label">AN TOÀN<br>GIAO THÔNG</span>
+                </div>
+                <div class="safety-card">
+                    <div class="icon-wrapper">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L13.5 8.5L20 10L13.5 11.5L12 18L10.5 11.5L4 10L10.5 8.5L12 2Z" fill="#dc2626"/>
+                            <line x1="5" y1="5" x2="19" y2="19" stroke="#b91c1c" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <span class="card-label">KHÔNG<br>PHÁO NỔ</span>
+                </div>
+            </div>
+
+            <!-- Student Info -->
+            <div class="info-box">
+                <div class="flex flex-wrap gap-4 items-center">
+                    <span>Họ và tên học sinh: <input type="text" class="w-64 font-bold text-blue-900"></span>
+                    <span>Lớp: <input type="text" class="w-20 font-bold text-blue-900 text-center"></span>
+                </div>
+                <p class="mt-3 font-bold italic text-blue-700 text-sm">Em xin cam kết thực hiện tốt các nội dung sau:</p>
+            </div>
+
+            <!-- Commitment Content -->
+            <div class="commitment-box">
+                <div class="text-[0.85rem] leading-relaxed space-y-1">
+                    <label class="check-container">
+                        <input type="checkbox" class="hidden-checkbox">
+                        <div class="custom-checkbox"></div>
+                        <span><strong>1.</strong> Tuyệt đối không sử dụng các chất cháy nổ, các đồ chơi bạo lực ở trường học cũng như ở nhà. Kiên quyết không tiếp tay cho kẻ xấu trong việc buôn bán, vận chuyển pháo và thuốc pháo trước, trong và sau Tết Nguyên đán Bính Ngọ và các ngày lễ lớn trong năm 2026.</span>
+                    </label>
+
+                    <label class="check-container">
+                        <input type="checkbox" class="hidden-checkbox">
+                        <div class="custom-checkbox"></div>
+                        <span><strong>2.</strong> Tích cực tham gia công tác phòng ngừa, phát hiện, đấu tranh với các hành vi vi phạm về quản lí, sử dụng các loại pháo và thuốc pháo.</span>
+                    </label>
+
+                    <label class="check-container">
+                        <input type="checkbox" class="hidden-checkbox">
+                        <div class="custom-checkbox"></div>
+                        <span><strong>3.</strong> Tuyên truyền mọi người chấp hành nghiêm chỉnh các quy định về việc không sản xuất, mua, bán, vận chuyển, tàng trữ, sử dụng trái phép các loại pháo, thuốc pháo.</span>
+                    </label>
+
+                    <label class="check-container">
+                        <input type="checkbox" class="hidden-checkbox">
+                        <div class="custom-checkbox"></div>
+                        <span><strong>4.</strong> Tuyệt đối không sử dụng các chất kích thích như: Rượu, bia, <strong>Ma túy</strong>, <strong>Thuốc lá</strong>. Đón tết Bính Ngọ vui tươi lành mạnh, không vi phạm pháp luật.</span>
+                    </label>
+
+                    <label class="check-container">
+                        <input type="checkbox" class="hidden-checkbox">
+                        <div class="custom-checkbox"></div>
+                        <span><strong>5.</strong> Tham gia các hoạt động văn hóa, thể thao ở địa phương trong dịp Tết.</span>
+                    </label>
+
+                    <label class="check-container">
+                        <input type="checkbox" class="hidden-checkbox">
+                        <div class="custom-checkbox"></div>
+                        <span><strong>6.</strong> Thực hiện tốt <strong>Luật giao thông</strong> khi tham gia giao thông để đảm bảo an toàn cho mình và cho mọi người.</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Signature Section -->
+            <div class="signature-box mt-6">
+                <div class="grid grid-cols-3 gap-4 text-center text-[0.75rem] font-bold">
+                    <div>
+                        <p class="mb-2 uppercase text-blue-800">Xác nhận của<br>Phụ huynh</p>
+                        <canvas id="pad-ph" class="signature-pad"></canvas>
+                        <button onclick="clearPad('pad-ph')" class="mt-1 text-red-500 no-print text-[10px] hover:underline">Xóa ký</button>
+                    </div>
+                    <div>
+                        <p class="mb-2 uppercase text-green-800">Xác nhận của<br>GVCN</p>
+                        <canvas id="pad-gv" class="signature-pad"></canvas>
+                        <button onclick="clearPad('pad-gv')" class="mt-1 text-red-500 no-print text-[10px] hover:underline">Xóa ký</button>
+                    </div>
+                    <div>
+                        <p class="mb-2 uppercase text-red-800">Người thực hiện<br>(Ký, ghi rõ họ tên)</p>
+                        <canvas id="pad-hs" class="signature-pad"></canvas>
+                        <button onclick="clearPad('pad-hs')" class="mt-1 text-red-500 no-print text-[10px] hover:underline">Xóa ký</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NEW: Footer Controls with Submit Button at the bottom -->
+            <div class="mt-10 flex flex-col items-center gap-4 no-print">
+                <button onclick="showSuccess()" class="bg-red-600 hover:bg-red-700 text-white px-12 py-4 rounded-2xl font-bold shadow-xl transition transform hover:scale-105 flex items-center gap-3 text-lg border-b-4 border-red-800 active:border-b-0 active:translate-y-1">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+                    GỬI VỀ NHÀ TRƯỜNG
+                </button>
+                
+                <div class="flex gap-4">
+                    <button onclick="window.print()" class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-6 py-2 rounded-xl font-semibold transition flex items-center gap-2 text-sm">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect width="12" height="8" x="6" y="14"/></svg>
+                        Lưu file & In phiếu
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal">
+        <div class="bg-white p-8 rounded-3xl shadow-2xl max-w-sm w-full text-center border-t-8 border-green-500 mx-4">
+            <div class="text-6xl mb-4 animate-bounce">🧧</div>
+            <h2 class="text-2xl font-bold mb-2 text-gray-800">Gửi Thành Công!</h2>
+            <p class="text-gray-600 mb-6">Cam kết của em đã được chuyển đến hệ thống của nhà trường. Chúc em và gia đình một năm mới Bính Ngọ an khang, thịnh vượng!</p>
+            <button onclick="closeModal()" class="w-full bg-green-600 text-white py-3 rounded-xl font-bold hover:bg-green-700 transition">Đóng</button>
+        </div>
+    </div>
+
+    <script>
+        const pads = ['pad-ph', 'pad-gv', 'pad-hs'];
+        const contexts = {};
+
+        function initPads() {
+            pads.forEach(id => {
+                const canvas = document.getElementById(id);
+                const rect = canvas.getBoundingClientRect();
+                canvas.width = rect.width;
+                canvas.height = rect.height;
+                const ctx = canvas.getContext('2d');
+                contexts[id] = ctx;
+
+                let drawing = false;
+                const startPos = (e) => {
+                    drawing = true;
+                    ctx.beginPath();
+                    const pos = getPos(e, canvas);
+                    ctx.moveTo(pos.x, pos.y);
+                };
+                const draw = (e) => {
+                    if (!drawing) return;
+                    e.preventDefault();
+                    const pos = getPos(e, canvas);
+                    ctx.lineWidth = 2.5;
+                    ctx.lineCap = 'round';
+                    ctx.strokeStyle = '#1e3a8a';
+                    ctx.lineTo(pos.x, pos.y);
+                    ctx.stroke();
+                };
+                canvas.addEventListener('mousedown', startPos);
+                canvas.addEventListener('mouseup', () => drawing = false);
+                canvas.addEventListener('mousemove', draw);
+                canvas.addEventListener('touchstart', startPos);
+                canvas.addEventListener('touchend', () => drawing = false);
+                canvas.addEventListener('touchmove', draw);
+            });
+        }
+
+        function getPos(e, canvas) {
+            const r = canvas.getBoundingClientRect();
+            const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+            const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+            return { x: clientX - r.left, y: clientY - r.top };
+        }
+
+        function clearPad(id) {
+            const canvas = document.getElementById(id);
+            contexts[id].clearRect(0, 0, canvas.width, canvas.height);
+        }
+
+        function showSuccess() { document.getElementById('successModal').style.display = 'flex'; }
+        function closeModal() { document.getElementById('successModal').style.display = 'none'; }
+
+        window.onload = initPads;
+        window.onresize = initPads;
+    </script>
+</body>
+</html>
